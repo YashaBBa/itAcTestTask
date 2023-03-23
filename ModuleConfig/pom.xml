@@ -7,11 +7,21 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>ModuleConfig</artifactId>
-    <packaging>jar</packaging>
-    <name>ModuleConfig Maven Webapp</name>
-    <url>http://maven.apache.org</url>
+    <version>0.0.1-SNAPSHOT</version>
+
     <dependencies>
 
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
