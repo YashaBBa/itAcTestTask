@@ -2,7 +2,6 @@ package entity;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import entity.mapper.CustomUserSerializer;
-import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Objects;
