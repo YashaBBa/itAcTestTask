@@ -9,5 +9,5 @@ public interface UserDao {
 
     boolean addNewUserInDB(User user);
 
-    boolean checkIsUserAlreadyExists(String email);
+    boolean checkIfUserAlreadyExists(String email);
 }

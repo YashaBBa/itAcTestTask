@@ -22,10 +22,6 @@
     <properties>
         <java.version>11</java.version>
     </properties>
-
-
-
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -55,23 +51,12 @@
             <artifactId>spring-boot-starter-log4j2</artifactId>
             <version>3.0.4</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
-            <version>8.0.4</version>
-        </dependency>
-
-
-
-
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -82,8 +67,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-
-
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -95,16 +78,7 @@
             <version>4.13.2</version>
             <scope>compile</scope>
         </dependency>
-
-
-
-
-
-
     </dependencies>
-
-
-
     <build>
         <pluginManagement>
         <plugins>
@@ -120,7 +94,4 @@
         </plugins>
         </pluginManagement>
     </build>
-
-
-
 </project>

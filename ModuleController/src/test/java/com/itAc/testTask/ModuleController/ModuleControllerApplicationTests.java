@@ -24,58 +24,58 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 class ModuleControllerApplicationTests {
 
-	@Autowired
-	private MockMvc mockMvc;
+    @Autowired
+    private MockMvc mockMvc;
 
 
-	@Autowired
-	private Controller controller;
+    @Autowired
+    private Controller controller;
 
 
-	@Test
-	public void GetAllRequestTest() throws Exception {
-		this.mockMvc.perform(get("/api/all"))
-				.andDo(print())
-				.andExpect(status().isOk());
-	}
-
-	@Test
-	public void AddCorrectUserTest() throws Exception {
-		User user = new User();
-		user.setName("test");
-		user.setSurname("test");
-		user.setPatronymic("test");
-		user.setEmail("test@gamil.com");
-		Role role = new Role();
-		role.setId(2L);
-		user.setRole(role);
-
-		ResponseEntity<String> response = controller.addNewPerson(user, role);
-
-		assertEquals(HttpStatus.OK, response.getStatusCode());
-		assertEquals("New Person Was Created!", response.getBody());
-
-	}
-	@Test
-	public void AddNotCorrectUserTest() throws Exception {
-		User user = new User();
-		user.setName("testи");
-		user.setSurname("tфest");
-		user.setPatronymic("test");
-		user.setEmail("test.gamil.com");
-		Role role = new Role();
-		role.setId(2L);
-
-		user.setRole(role);
 
 
-		ResponseEntity<String> response = controller.addNewPerson(user, role);
+    @Test
+    public void getAllRequestTest() throws Exception {
+        this.mockMvc.perform(get("/api/all"))
+                .andDo(print())
+                .andExpect(status().isOk());
+    }
 
-		assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-		assertEquals("Oops! Somthing wrong whith input data!" +
-				"\n Please check validation and try again!", response.getBody());
+    @Test
+    public void addCorrectUserTest() throws Exception {
+        User user = new User();
+        user.setName("test");
+        user.setSurname("test");
+        user.setPatronymic("test");
+        user.setEmail("testt@gamil.com");
+        user.setRole(Role.ADMINISTRATOR);
 
-	}
+        ResponseEntity<String> response = controller.addNewPerson(user);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals("New Person Was Created!", response.getBody());
+
+    }
+
+    @Test
+    public void addNotCorrectUserTest() throws Exception {
+        User user = new User();
+        user.setName("testи");
+        user.setSurname("tфest");
+        user.setPatronymic("test");
+        user.setEmail("test.gamil.com");
+        user.setRole(Role.ADMINISTRATOR);
+
+
+
+
+        ResponseEntity<String> response = controller.addNewPerson(user);
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+        assertEquals("Oops! Somthing wrong whith input data!" +
+                "\n Please check validation and try again!", response.getBody());
+
+    }
 
 
 }

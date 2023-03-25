@@ -1,12 +1,14 @@
 package service.impl;
 
 import entity.User;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.context.support.BeanDefinitionDsl;
 import service.EntityValidator;
 import service.ValidationError;
 
 import java.util.function.BiPredicate;
 import java.util.regex.Pattern;
+
 
 public class UserValidation implements EntityValidator<User> {
     private static final String TEXT_PATTERN = "[A-Za-z]{2,50}";

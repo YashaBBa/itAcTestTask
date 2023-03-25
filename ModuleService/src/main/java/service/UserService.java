@@ -1,11 +1,12 @@
 package service;
 
+import dto.UserDTO;
 import entity.User;
 
 import java.util.List;
 
 public interface UserService {
-    List<User> getAllUsersData() throws ServiceException;
+    List<UserDTO> getAllUsersData() throws ServiceException;
 
     boolean addNewUser(User user) throws ServiceException;
 
